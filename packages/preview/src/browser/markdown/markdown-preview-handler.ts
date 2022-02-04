@@ -55,6 +55,7 @@ export class MarkdownPreviewHandler implements PreviewHandler {
         const sanitizedContent = DOMPurify.sanitize(renderedContent);
         const contentElement = document.createElement('div');
         contentElement.classList.add(this.contentClass);
+        // eslint-disable-next-line no-unsanitized/property
         contentElement.innerHTML = sanitizedContent;
         this.addLinkClickedListener(contentElement, params);
         return contentElement;
